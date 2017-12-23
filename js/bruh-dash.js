@@ -15,18 +15,26 @@ global.bruhdash = {
   },
 
   // returns the last element of an array
-  last: function () {
+  last: function (arr) {
+      return arr.pop();
 
   },
 
   // returns the index of the first matching element from left to right
-  indexOf: function () {
-
+  indexOf: function (arr, value) {
+    for (var i=0;i<arr.length;i++){
+      if (arr[i] == value){
+        return arr.indexOf(arr[i]);
+      }
+      if (arr.indexOf(value) == -1){
+        return -1;
+      }
+    }
   },
 
   // returns the index of the first matching element from right to left
-  lastIndexOf: function () {
-
+  lastIndexOf: function (){
+      
   },
 
   // returns an array with all elements except for the last element
