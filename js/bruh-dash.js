@@ -23,7 +23,7 @@ global.bruhdash = {
   // returns the index of the first matching element from left to right
   indexOf: function (arr, value) {
     for (var i=0;i<arr.length;i++){
-      if (arr[i] == value){
+      if (arr[i] === value){
         return arr.indexOf(arr[i]);
       }
       if (arr.indexOf(value) == -1){
@@ -33,18 +33,28 @@ global.bruhdash = {
   },
 
   // returns the index of the first matching element from right to left
-  lastIndexOf: function (){
-      
-  },
+  // lastIndexOf: function (arr, value){
+  //   for (var i =0; i < arr.length; 1++){
+  //     if (arr[i] === value){
+  //       return arr.lastIndexOf(arr[i]);
+  //     }
+  //     if (arr.lastIndexOf(value) == -1){
+  //       return -1;
+  //     }
+  //   }
+  // },
 
   // returns an array with all elements except for the last element
-  initial: function () {
+  initial: function (arr) {
+    arr.pop();
+    return arr;
 
   },
   
   // returns an array with all falsey values removed
-  compact: function() {
-
+  compact: function(arr) {
+    let result = arr.filter(Boolean);
+    return result;
   },
 
   // creates a slice of an array from the start index up to but not including the end index
